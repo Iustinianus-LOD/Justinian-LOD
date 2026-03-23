@@ -39,7 +39,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: url("/Users/mari/Desktop/Justinian-LOD/lodlam_project/assets/img/6538981_1482.svg") center / cover no-repeat;
+            background: url("../assets/img/6538981_1482.svg") center / cover no-repeat;
             filter: blur(1px);
             opacity: 0.5;
             transform: scale(1.05);
@@ -318,7 +318,7 @@
     </div>
   </xsl:template>
 
-  <!-- head -> h3 or h2 depending on ancestor: keep simple: if parent is chapter then h3 -->
+  <!-- head -> h3 -->
   <xsl:template match="tei:head">
     <h3>
       <xsl:apply-templates/>
