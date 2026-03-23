@@ -245,9 +245,10 @@
 
       <textClass>
         <keywords scheme="https://www.wikidata.org/">
-          <term xml:lang="en" sameAs="https://www.wikidata.org/wiki/Q41866">Justinian I</term>
-          <term xml:lang="en">Byzantine history</term>
-          <term xml:lang="en">Persian War</term>
+          <term xml:lang="en">Battle</term>
+          <term xml:lang="en" sameAs="https://www.wikidata.org/wiki/Q180335">Phalanx</term>
+          <term xml:lang="en" sameAs="https://www.wikidata.org/wiki/Q379821">Massagetae</term>
+          <term xml:lang="en" sameAs="https://www.wikidata.org/wiki/Q213165">Immortals</term>
         </keywords>
       </textClass>
     </profileDesc>
