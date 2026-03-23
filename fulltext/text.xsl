@@ -109,8 +109,8 @@
           .pers { font-weight: 700; color: #6d4a2a; }
           .place { font-weight: 700; color: #5a5a5a; }
           .date { font-style: italic; color: #444; }
-          .term { background-color: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 3px; border: 1px solid #ffeaa7; font-weight: normal; }
-          .term:hover { background-color: #ffeaa7; cursor: help; }
+          .term-concept { background-color: #fff3cd; color: #856404; padding: 2px 6px; border-radius: 3px; border: 1px solid #ffeaa7; font-weight: normal; }
+          .term-concept:hover { background-color: #ffeaa7; cursor: help; }
           @media (max-width: 768px) {
             .container { padding: 24px; margin: 10px; }
           }
