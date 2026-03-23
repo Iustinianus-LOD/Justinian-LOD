@@ -483,13 +483,13 @@
         <div class="idea-text">
           <div class="idea-text">
             <p>
-              The <strong>Theoretical Model</strong> was developed by analysing the natural‑language descriptions of each cultural heritage item, as provided by the holding institutions. The goal was to capture the core knowledge about Justinian’s legacy in a structured yet human‑readable form. All statements were expressed as <strong>subject–predicate–object</strong> triples, following the pattern of <strong>Linked Open Data</strong>. This made it possible to explicitly show not only how each item relates to the central theme—the multifaceted heritage of Emperor Justinian I—but also the network of connections among the items themselves.
+              The <strong>Theoretical Model</strong> was developed by analysing the natural language descriptions of each cultural heritage item, as provided by the holding institutions. The goal was to capture the core knowledge about Justinian’s legacy in a structured yet human readable form. All statements were expressed as <strong>subject–>predicate–>object</strong> triples, following the pattern of <strong>Linked Open Data</strong>. This made it possible to explicitly show not only how each item relates to the central theme, being the multifaceted heritage of Emperor Justinian I, but also the network of connections among the items themselves.
             </p>
             <p>
-              Because not every institution supplied metadata according to a formal standard, the team carefully aligned each predicate to the most appropriate vocabulary. Where necessary, predicates were adapted to maintain readability and to ensure consistency with authority files. <strong>Additional entities</strong>—such as historical figures (Theodora, Belisarius), places (Constantinople, Ravenna), and concepts (Corpus Iuris Civilis, Byzantine architecture)—were introduced to enrich the dataset and to reveal further links across the items.
+              Because not every institution supplied metadata according to a formal standard, we carefully aligned each predicate to the most appropriate vocabulary. Where necessary, predicates were adapted to maintain readability and to ensure consistency with authority files. <strong>Additional entities</strong>—such as historical figures (Theodora, Belisarius), places (Constantinople, Ravenna), and concepts (Corpus Iuris Civilis, Byzantine architecture) were introduced to enrich the dataset and to reveal further links across the items.
             </p>
             <p>
-              The visualizton of both the theoretical and conceptual maps were done in <strong>Draw.io</strong> by inserting all descrptions in a machine readable text format. The aesthatics were changed later manually. In the visualisation, different <strong>colours and shapes</strong> serve to distinguish the types of information. Items are represented with distinct shapes and colors, while entities are shown in <strong>rectangular white and green boxes</strong>. Entities with a literal and/or numeric nature are shown with <strong>oval shaped green boxes</strong>. A legend in the diagram explains the visual encoding in detail.
+             In the visualisation, different <strong>colours and shapes</strong> serve to distinguish the types of information, and to make it easier to navigate the map. Items are represented with distinct shapes and colors, while entities are shown in <strong>rectangular white and green boxes</strong>. Entities with a literal and/or numeric nature are shown with <strong>oval shaped green boxes</strong>. A legend in the diagram explains the visual encoding in detail.
             </p>
           </div>
           <div class="image-container text-center my-4">
@@ -514,13 +514,12 @@
               <div class="idea-text">
                 <div class="idea-text">
                   <p>
-                    The <strong>Conceptual Model</strong> formalises the domain knowledge by defining the <strong>classes, properties, and relationships</strong> that structure the dataset. Starting from the theoretical model, each natural‑language triple was elevated to an abstract level and assigned a suitable class or property from established ontologies. A custom <strong>base URI</strong> was created to uniquely identify the resources of the project: <code>https://github.com/Iustinianus-LOD/Justinian-LOD/</code>.
+                    The <strong>Conceptual Model</strong> formalises the domain knowledge by defining the <strong>classes, properties, and relationships</strong> that structure the dataset. Starting from the theoretical model, each natural language triple was elevated to an abstract level and assigned a suitable class or property from established ontologies. A custom <strong>base URI</strong> was created to uniquely identify the resources of the project: <code>https://github.com/Iustinianus-LOD/Justinian-LOD/</code>.
                   </p>
                   <p>
-                    The selection of ontologies was driven by the nature of each item. For the <strong>Codex Florentinus</strong> and other bibliographic resources, the team adopted <strong>BIBFRAME</strong>, the standard for describing library materials. Museum objects—such as the <strong>Diptych Barberini</strong>, the <strong>San Vitale Mosaic</strong>, and the <strong>gold solidus</strong>—were modelled using <strong>CIDOC‑CRM</strong>, which offers the necessary granularity for cultural heritage artefacts. <strong>Schema.org</strong> and <strong>FOAF</strong> were employed for people, places, and organisations, ensuring interoperability with general‑purpose web applications. <strong>Nomisma.org</strong> ontologies provided the required specificity for the numismatic item.
-                  </p>
+                    The selection of ontologies was driven by the nature of each item. For the <strong>Codex Florentinus</strong> and other bibliographic resources, the team adopted <strong>BIBFRAME</strong>, the standard for describing library materials. Museum objects—such as the <strong>Diptych Barberini</strong>, the <strong>San Vitale Mosaic</strong>, and the <strong>gold solidus</strong>—were modelled using <strong>CIDOC‑CRM</strong>, which offers the necessary granularity for cultural heritage artefacts. <strong>Schema.org</strong> and <strong>FOAF</strong> were employed for people, places, and organisations, ensuring interoperability with general purpose web applications. <strong>Nomisma.org</strong> ontologies provided the required specificity for the numismatic item (coin)                  </p>
                   <p>
-                    All classes and properties were selected on a case‑by‑case basis to guarantee semantic precision while preserving coherence across heterogeneous data sources. The resulting model thus reflects a careful balance between the richness of the original descriptions and the formal requirements of the <strong>Semantic Web</strong>.
+                    All classes and properties were selected on a case by case basis to guarantee semantic precision while preserving coherence across heterogeneous data sources. The resulting model thus reflects a careful balance between the richness of the original descriptions and the formal requirements of the <strong>Semantic Web</strong>.
                   </p>
                 </div>
             </p>
@@ -664,8 +663,9 @@
             <div class="idea-text">
                 <h4>RDF Visualization</h4>
                 <div class="image-container text-center my-4">
-                    <img src="assets/img/rdf_visualization.png" alt="RDF visual" class="img-fluid model-image" style="max-width: 800px; width: 100%; height: auto;">
-                    <p class="text-muted small mt-2">RDF Visualization</p>
+                  <a href="assets/img/rdf_visualization.png" target="_blank"></a>
+                    <img src="assets/img/rdf_visualization.png" alt="RDF visual" class="img-fluid model-image" style="max-width: 800px; width: 100%; height: auto; cursor: pointer;">
+                    <p class="text-muted small mt-2">RDF Visualization (click to enlarge)</p>
                 </div>
             </div>
 
