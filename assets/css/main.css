@@ -1556,3 +1556,34 @@
     display: block; 
     margin: 0 auto; 
   }
+
+
+  @media (max-width: 768px) {
+  .navmenu ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+  }
+
+  .navmenu.is-open ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+body.no-scroll {
+  overflow: hidden;
+}

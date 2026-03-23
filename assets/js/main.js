@@ -2,12 +2,12 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
-    mobileMenu();
-    imageModal();
-    csvTabs();
+    initMobileMenu();
+    initImageModal();
+    initCsvTabs();
   });
 
-  function mobileMenu() {
+  function initMobileMenu() {
     const nav = document.querySelector(".navmenu");
     const toggleBtn = document.querySelector(".nav-toggle");
     const navList = document.querySelector(".navmenu ul");
@@ -15,47 +15,44 @@
 
     if (!nav || !toggleBtn || !navList) return;
 
+    toggleBtn.setAttribute("aria-expanded", "false");
+
     function openMenu() {
       nav.classList.add("is-open");
-      navList.style.display = "flex";
-      document.body.classList.add("no-scroll");
       toggleBtn.setAttribute("aria-expanded", "true");
       toggleBtn.textContent = "✕";
+      document.body.classList.add("no-scroll");
     }
 
     function closeMenu() {
       nav.classList.remove("is-open");
-      navList.style.display = "";
-      document.body.classList.remove("no-scroll");
       toggleBtn.setAttribute("aria-expanded", "false");
       toggleBtn.textContent = "☰";
+      document.body.classList.remove("no-scroll");
     }
 
-    function toggleMenu() {
+    toggleBtn.addEventListener("click", function () {
       if (nav.classList.contains("is-open")) {
         closeMenu();
       } else {
         openMenu();
       }
-    }
-
-    toggleBtn.setAttribute("aria-expanded", "false");
-    toggleBtn.addEventListener("click", toggleMenu);
+    });
 
     navLinks.forEach(link => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", function () {
         if (window.innerWidth <= 768) closeMenu();
       });
     });
 
-    window.addEventListener("resize", () => {
+    window.addEventListener("resize", function () {
       if (window.innerWidth > 768) {
         closeMenu();
       }
     });
   }
 
-  function imageModal() {
+  function initImageModal() {
     const triggers = document.querySelectorAll(".item-img-trigger");
     if (!triggers.length) return;
 
@@ -63,7 +60,7 @@
     modal.className = "item-img-modal";
     modal.innerHTML = `
       <div class="item-img-modal__content" role="dialog" aria-modal="true" aria-label="Image preview">
-        <button class="item-img-modal__close" type="button" aria-label="Close image preview">×</button>
+        <button class="item-img-modal__close" type="button" aria-label="Close image preview">&times;</button>
         <img class="item-img-modal__img" src="" alt="">
       </div>
     `;
@@ -89,8 +86,8 @@
 
     triggers.forEach(trigger => {
       trigger.addEventListener("click", function () {
-        const src = this.dataset.img;
-        const alt = this.dataset.alt || "";
+        const src = this.getAttribute("data-img");
+        const alt = this.getAttribute("data-alt") || "";
         if (src) openModal(src, alt);
       });
     });
@@ -108,7 +105,7 @@
     });
   }
 
-  function csvTabs() {
+  function initCsvTabs() {
     const tabButtons = document.querySelectorAll(".csv-item");
     const tables = document.querySelectorAll(".csv-table");
 
@@ -116,7 +113,7 @@
 
     tabButtons.forEach(button => {
       button.addEventListener("click", function () {
-        const targetId = this.dataset.target;
+        const targetId = this.getAttribute("data-target");
         if (!targetId) return;
 
         tabButtons.forEach(btn => btn.classList.remove("active"));
@@ -125,9 +122,7 @@
         this.classList.add("active");
 
         const targetTable = document.getElementById(targetId);
-        if (targetTable) {
-          targetTable.classList.add("active");
-        }
+        if (targetTable) targetTable.classList.add("active");
       });
     });
   }
