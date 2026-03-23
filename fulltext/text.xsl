@@ -339,11 +339,11 @@
 
   <!-- page break -->
   <xsl:template match="tei:pb">
-    <div class="page-break">
+    <span class="page-break">
       <xsl:text>[Page </xsl:text>
       <xsl:value-of select="@n"/>
       <xsl:text>]</xsl:text>
-    </div>
+    </span>
   </xsl:template>
 
   <!-- lb -> line break -->
