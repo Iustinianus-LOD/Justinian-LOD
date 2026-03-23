@@ -165,16 +165,22 @@
             <note>Leader (Eruli) active in Mesopotamia.</note>
           </person>
 
+          <person xml:id="MASS" type="ethnic-group" sameAs="https://www.wikidata.org/wiki/Q379821">
+            <persName>Massagetae</persName>
+            <note>Nomadic Iranian people mentioned in the text.</note>
+          </person>
+
           <person xml:id="SUN" sameAs="https://www.wikidata.org/wiki/Q7640278">
             <persName>Sunicas</persName>
+            <affiliation ref="#MASS"/>
             <note>Commander (Massagetae).</note>
           </person>
 
           <person xml:id="AIG" sameAs="https://www.wikidata.org/wiki/Q61759955">
             <persName>Aigan</persName>
+            <affiliation ref="#MASS"/>
             <note>Commander (Massagetae).</note>
           </person>
-
 
           <person xml:id="HERM" sameAs="https://www.wikidata.org/wiki/Q1561789">
             <persName>Hermogenes</persName>
