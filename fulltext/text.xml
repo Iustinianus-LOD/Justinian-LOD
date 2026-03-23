@@ -145,6 +145,11 @@
             <note>Wife of Belisarius.</note>
           </person>
 
+          <person xml:id="RUF">
+            <persName>Rufinus</persName>
+            <note>Ambassador sent by Justinian, mentioned in the text.</note>
+          </person>
+
           <person xml:id="COUTZ">
             <persName>Coutzes</persName>
             <note>Officer (brother of Bouzes).</note>
