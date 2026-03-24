@@ -201,6 +201,14 @@
               </li>
 
               <li>
+                <a class="person-name" href="{/tei:TEI/tei:teiHeader/tei:profileDesc/tei:particDesc/tei:listPerson/tei:person[@xml:id='RUF']/@sameAs}"
+                   rel="noopener noreferrer" target="_blank">
+                  <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:profileDesc/tei:particDesc/tei:listPerson/tei:person[@xml:id='RUF']/tei:persName"/>
+                </a>
+                <xsl:text> — Ambassador sent by Justinian.</xsl:text>
+              </li>
+
+              <li>
                 <a class="person-name" href="{/tei:TEI/tei:teiHeader/tei:profileDesc/tei:particDesc/tei:listPerson/tei:person[@xml:id='BOUZ']/@sameAs}"
                    rel="noopener noreferrer" target="_blank">
                   <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:profileDesc/tei:particDesc/tei:listPerson/tei:person[@xml:id='BOUZ']/tei:persName"/>
@@ -444,12 +452,6 @@
   <!-- note -->
   <xsl:template match="tei:note">
     <span class="note"><xsl:apply-templates/></span>
-  </xsl:template>
-
-  <!-- fallback for other elements: copy text -->
-  <xsl:template match="text()">
-    <xsl:value-of select="normalize-space(.)"/>
-    <xsl:text> </xsl:text>
   </xsl:template>
 
   <!-- ignore attributes not needed -->
