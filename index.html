@@ -559,119 +559,6 @@
         </div>
       </section>
 
-      <div class="container">
-        <div class="domain-subsection">
-            <h3>RDF PRODUCTION</h3>
-
-            <div class="idea-text">
-                <h4>CSV Files in Formal Language</h4>
-                <p>
-                  <p>
-                    From these natural language CSV files, another set of CSV files is created using formal language. These files will be found under the folder <strong> “csv_files/Formal_language”</strong> within the project’s repository. The files will have the same structure as the natural language files, following the subject-predicate-object form, so that every statement could be traced back to its equivalent form in natural language and mapped into a semantic triple.
-                  </p>
-      <p>
-        The formalization process consisted of two parallel operations:
-      </p>
-      <ul>
-        <li>
-          For the <strong>predicates</strong>, every relationship identified in the natural language 
-          description was associated with a property from a predefined ontology or vocabulary. 
-          <strong>Dublin Core (dcterms)</strong> was used for generic descriptive metadata such as 
-          title, date, language, and source. <strong>BIBFRAME</strong> was used for bibliographic 
-          resources, <strong>CIDOC-CRM</strong> for cultural heritage objects and events, 
-          <strong>Schema.org</strong> for media items and generic descriptions, and the 
-          <strong>Nomisma Ontology (nmo)</strong> for the coin.
-        </li>
-        <li>
-          For the <strong>objects</strong>, every value was associated with a URI from an 
-          authority-controlled resource rather than being represented as a plain string. 
-          <strong>VIAF</strong> was used for people and authors, <strong>Wikidata</strong> for 
-          historical concepts and entities, <strong>GeoNames</strong> for geographical locations, 
-          and <strong>Getty AAT</strong> for object types and materials.
-        </li>
-      </ul>
-      <p>
-        Entities that are central to the project but not held by any particular institution — such as 
-        Justinian I, Theodora, Belisarius, the Byzantine Empire, and the Corpus Iuris Civilis — were 
-        assigned custom URIs under the project's base namespace (<code>sits:</code>).
-      </p>
-      <p>
-        Two additional CSV files were also created to describe relationships between entities that are 
-        not items themselves but are relevant to the dataset. These include relationships between 
-        historical figures and the items in which they appear, descriptions of the museums that hold 
-        the items, and the relationship between the Byzantine Empire and its capital Constantinople. 
-        <strong>owl:sameAs</strong> statements were also added to align the project's custom URIs 
-        with their equivalent Wikidata entries, ensuring interoperability with the broader 
-        Linked Open Data ecosystem.
-      </p>
-    </div>
-
-    <div class="idea-text">
-      <h4>Python Script for Transformation</h4>
-      <p>
-        The RDF dataset is produced programmatically by a Python script using the
-        <strong>rdflib</strong>, <strong>csv</strong> and <strong>glob</strong> libraries. The script
-        initializes an RDF graph, declares namespace prefixes, and processes every CSV file found in
-        the <strong>csv_files/Formal_language</strong> folder. Files are parsed with <strong>csv.DictReader</strong>,
-        which reads the header row automatically and yields subject–predicate–object rows.
-      </p>
-
-      <p>
-        For each row the script expands CURIEs to full URIs using the prefix map, accepts full
-        <code>http</code>/<code>https</code> URIs directly, and normalizes casing when needed. Objects
-        are handled according to their content:
-      </p>
-
-      <ul>
-        <li>Values wrapped in angle brackets (<code>&lt;&gt;</code>) are treated as URI references.</li>
-        <li>CURIEs are expanded using the prefix map.</li>
-        <li>Language-tagged values (e.g. <code>@en</code>, <code>@la</code>) become language-tagged literals.</li>
-        <li>Four-digit values within the historical year range are mapped to <code>xsd:gYear</code>.</li>
-        <li>Other numeric values are mapped to <code>xsd:integer</code>.</li>
-        <li>Remaining values are stored as plain string literals.</li>
-      </ul>
-
-      <p>
-        If a subject or predicate cannot be resolved to a known CURIE or URI, the row is skipped and
-        reported on the console to make source correction easy. After processing all files the graph is
-        serialized to Turtle as <strong>full_dataset.ttl</strong>, chosen for its readability and broad
-        tooling support.
-      </p>
-
-      <p>What the script does specifically:</p>
-      <ul>
-        <li>Initialises a graph and binds namespace prefixes.</li>
-        <li>Reads all <code>.csv</code> files in <code>csv_files/Formal_language</code> using <code>DictReader</code>.</li>
-        <li>Expands subjects/predicates from CURIEs or accepts full URIs; parses objects into URIs or typed literals.</li>
-        <li>Adds triples to the graph and writes the resulting Turtle file (<code>full_dataset.ttl</code>).</li>
-      </ul>
-
-      <div class="embed-container">
-        <iframe frameborder="0" scrolling="yes" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FIustinianus-LOD%2FJustinian-LOD%2Fblob%2Fmain%2Frdf.py&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
-      </div>
-    </div>
-
-            <div class="idea-text">
-                <h4>RDF Dataset</h4>
-                <p>Our final output:</p>
-                <div class="embed-container">
-                    <iframe frameborder="0" scrolling="yes" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FIustinianus-LOD%2FJustinian-LOD%2Fblob%2Fmain%2Ffull_dataset.ttl&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
-                </div>
-            </div>
-
-            <div class="idea-text">
-                <h4>RDF Visualization</h4>
-                <div class="image-container text-center my-4">
-                  <a href="assets/img/rdf_visualization.png" target="_blank" style="display: inline-block;">
-                    <img src="assets/img/rdf_visualization.png"
-                        alt="RDF Visualization diagram" 
-                        class="img-fluid model-image" 
-                        style="max-width: 800px; width: 100%; height: auto; cursor: pointer; border: 2px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                   </a>
-                    <p class="text-muted small mt-2">RDF Visualization (click to enlarge)</p>
-                </div>
-            </div>
-
 
         <!-- ======= Knowledge Representation Section ======= -->
         <section id="knowledge-representation" class="knowledge-representation">
@@ -1550,6 +1437,121 @@
 
             </div>
           </div>
+
+
+               <div class="container">
+        <div class="domain-subsection">
+            <h3>RDF PRODUCTION</h3>
+
+            <div class="idea-text">
+                <h4>CSV Files in Formal Language</h4>
+                <p>
+                  <p>
+                    From these natural language CSV files, another set of CSV files is created using formal language. These files will be found under the folder <strong> “csv_files/Formal_language”</strong> within the project’s repository. The files will have the same structure as the natural language files, following the subject-predicate-object form, so that every statement could be traced back to its equivalent form in natural language and mapped into a semantic triple.
+                  </p>
+      <p>
+        The formalization process consisted of two parallel operations:
+      </p>
+      <ul>
+        <li>
+          For the <strong>predicates</strong>, every relationship identified in the natural language 
+          description was associated with a property from a predefined ontology or vocabulary. 
+          <strong>Dublin Core (dcterms)</strong> was used for generic descriptive metadata such as 
+          title, date, language, and source. <strong>BIBFRAME</strong> was used for bibliographic 
+          resources, <strong>CIDOC-CRM</strong> for cultural heritage objects and events, 
+          <strong>Schema.org</strong> for media items and generic descriptions, and the 
+          <strong>Nomisma Ontology (nmo)</strong> for the coin.
+        </li>
+        <li>
+          For the <strong>objects</strong>, every value was associated with a URI from an 
+          authority-controlled resource rather than being represented as a plain string. 
+          <strong>VIAF</strong> was used for people and authors, <strong>Wikidata</strong> for 
+          historical concepts and entities, <strong>GeoNames</strong> for geographical locations, 
+          and <strong>Getty AAT</strong> for object types and materials.
+        </li>
+      </ul>
+      <p>
+        Entities that are central to the project but not held by any particular institution — such as 
+        Justinian I, Theodora, Belisarius, the Byzantine Empire, and the Corpus Iuris Civilis — were 
+        assigned custom URIs under the project's base namespace (<code>sits:</code>).
+      </p>
+      <p>
+        Two additional CSV files were also created to describe relationships between entities that are 
+        not items themselves but are relevant to the dataset. These include relationships between 
+        historical figures and the items in which they appear, descriptions of the museums that hold 
+        the items, and the relationship between the Byzantine Empire and its capital Constantinople. 
+        <strong>owl:sameAs</strong> statements were also added to align the project's custom URIs 
+        with their equivalent Wikidata entries, ensuring interoperability with the broader 
+        Linked Open Data ecosystem.
+      </p>
+    </div>
+
+    <div class="idea-text">
+      <h4>Python Script for Transformation</h4>
+      <p>
+        The RDF dataset is produced programmatically by a Python script using the
+        <strong>rdflib</strong>, <strong>csv</strong> and <strong>glob</strong> libraries. The script
+        initializes an RDF graph, declares namespace prefixes, and processes every CSV file found in
+        the <strong>csv_files/Formal_language</strong> folder. Files are parsed with <strong>csv.DictReader</strong>,
+        which reads the header row automatically and yields subject–predicate–object rows.
+      </p>
+
+      <p>
+        For each row the script expands CURIEs to full URIs using the prefix map, accepts full
+        <code>http</code>/<code>https</code> URIs directly, and normalizes casing when needed. Objects
+        are handled according to their content:
+      </p>
+
+      <ul>
+        <li>Values wrapped in angle brackets (<code>&lt;&gt;</code>) are treated as URI references.</li>
+        <li>CURIEs are expanded using the prefix map.</li>
+        <li>Language-tagged values (e.g. <code>@en</code>, <code>@la</code>) become language-tagged literals.</li>
+        <li>Four-digit values within the historical year range are mapped to <code>xsd:gYear</code>.</li>
+        <li>Other numeric values are mapped to <code>xsd:integer</code>.</li>
+        <li>Remaining values are stored as plain string literals.</li>
+      </ul>
+
+      <p>
+        If a subject or predicate cannot be resolved to a known CURIE or URI, the row is skipped and
+        reported on the console to make source correction easy. After processing all files the graph is
+        serialized to Turtle as <strong>full_dataset.ttl</strong>, chosen for its readability and broad
+        tooling support.
+      </p>
+
+      <p>What the script does specifically:</p>
+      <ul>
+        <li>Initialises a graph and binds namespace prefixes.</li>
+        <li>Reads all <code>.csv</code> files in <code>csv_files/Formal_language</code> using <code>DictReader</code>.</li>
+        <li>Expands subjects/predicates from CURIEs or accepts full URIs; parses objects into URIs or typed literals.</li>
+        <li>Adds triples to the graph and writes the resulting Turtle file (<code>full_dataset.ttl</code>).</li>
+      </ul>
+
+      <div class="embed-container">
+        <iframe frameborder="0" scrolling="yes" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FIustinianus-LOD%2FJustinian-LOD%2Fblob%2Fmain%2Frdf.py&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+      </div>
+    </div>
+
+            <div class="idea-text">
+                <h4>RDF Dataset</h4>
+                <p>Our final output:</p>
+                <div class="embed-container">
+                    <iframe frameborder="0" scrolling="yes" allow="clipboard-write" src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FIustinianus-LOD%2FJustinian-LOD%2Fblob%2Fmain%2Ffull_dataset.ttl&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+                </div>
+            </div>
+
+            <div class="idea-text">
+                <h4>RDF Visualization</h4>
+                <div class="image-container text-center my-4">
+                  <a href="assets/img/rdf_visualization.png" target="_blank" style="display: inline-block;">
+                    <img src="assets/img/rdf_visualization.png"
+                        alt="RDF Visualization diagram" 
+                        class="img-fluid model-image" 
+                        style="max-width: 800px; width: 100%; height: auto; cursor: pointer; border: 2px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                   </a>
+                    <p class="text-muted small mt-2">RDF Visualization (click to enlarge)</p>
+                </div>
+            </div>
+
         </section>
 
 
