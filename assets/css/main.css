@@ -1276,7 +1276,7 @@
   --------------------------------------------------------------*/
 
   .team {
-    padding: 120px 0;
+    padding: 120px 0 96px; /* slightly tighter bottom */
     background-color: var(--surface-color);
   }
 
@@ -1368,6 +1368,11 @@
     line-height: 1.2;
   }
 
+  /* Remove decorative underline/dash under names */
+  .member-card h3::after {
+    content: none;
+  }
+
   /* If you use <span class="surname">Surname</span> in H3, send the surname to a new line */
   .member-card h3 .surname {
     display: block;
@@ -1438,7 +1443,7 @@
           così resta sempre un quadrato fluido in ogni breakpoint. */
 
   @media (max-width: 768px) {
-    .team { padding: 60px 0; }
+    .team { padding: 60px 0 48px; }
     .member-card { padding: 25px 20px; }
     .member-card h3 { font-size: 20px; }
   }
