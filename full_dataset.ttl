@@ -4,34 +4,34 @@
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dbo: <https://dbpedia.org/ontology/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix just: <https://github.com/Iustinianus-LOD/Justinian-LOD.git/> .
 @prefix nm: <http://nomisma.org/id/> .
 @prefix nmo: <http://nomisma.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <https://schema.org/> .
-@prefix sits: <https://github.com/Iustinianus-LOD/Justinian-LOD.git/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd: <https://www.wikidata.org/wiki/> .
 
-sits:institution_BritishMuseum a schema:Museum ;
+just:institution_BritishMuseum a schema:Museum ;
     owl:sameAs wd:Q6273 .
 
-sits:institution_LouvreMuseum a schema:Museum ;
+just:institution_LouvreMuseum a schema:Museum ;
     owl:sameAs wd:Q19675 ;
     schema:location wd:Q142 .
 
-sits:item_book_1 a bf:Text ;
-    bf:heldBy sits:institution_BibliotecaMediceaLaurenziana ;
+just:item_book_1 a bf:Text ;
+    bf:heldBy just:institution_BibliotecaMediceaLaurenziana ;
     dcterms:date "600" ;
-    dcterms:isPartOf sits:collection_CorpusIurisCivilis ;
+    dcterms:isPartOf just:collection_CorpusIurisCivilis ;
     dcterms:language <http://id.loc.gov/vocabulary/languages/lat> ;
     dcterms:medium aat:300011851 ;
     dcterms:source <https://tecabml.contentdm.oclc.org/digital/collection/pandette/id/4/rec/1> ;
     dcterms:spatial <https://www.geonames.org/745044> ;
     dcterms:subject <http://id.loc.gov/authorities/subjects/sh85115573> ;
     dcterms:title "Codex Florentinus"@la ;
-    bibo:annotates sits:concept_GreekUncial .
+    bibo:annotates just:concept_GreekUncial .
 
-sits:item_coin nmo:dateEnd "-1" ;
+just:item_coin nmo:dateEnd "-1" ;
     nmo:dateStart "-6" ;
     nmo:hasAuthority nm:augustus ;
     nmo:hasDenomination nm:aureus ;
@@ -42,30 +42,30 @@ sits:item_coin nmo:dateEnd "-1" ;
     dcterms:title "Roman Coin: Aureus of Emperor Augustus" ;
     crm:P55_has_current_location wd:Q6373 .
 
-sits:item_diptych dcterms:created "0525/0550" ;
+just:item_diptych dcterms:created "0525/0550" ;
     dcterms:medium aat:300011829 ;
     dcterms:source <https://collections.louvre.fr/ark:/53355/cl010114082> ;
-    dcterms:subject sits:person_Justinian_I ;
+    dcterms:subject just:person_Justinian_I ;
     dcterms:title "Feuillet de diptyque en cinq parties : l'Empereur triomphant (Justinien ?"@fr ;
     dcterms:type aat:300033991 ;
     crm:P43_has_dimension "29.8 x 26.6 cm" ;
     crm:P55_has_current_location wd:Q19675 ;
     schema:locationCreated wd:Q16869 .
 
-sits:item_hagia_sophia dcterms:created "0532/0537" ;
+just:item_hagia_sophia dcterms:created "0532/0537" ;
     dcterms:source <https://www.archnet.org/sites/1989> ;
     dcterms:title "Hagia Sophia"@en ;
     dcterms:type aat:300007742 ;
-    sits:commissionedBy sits:person_Justinian_I ;
-    sits:currentFunction "Mosque" ;
-    sits:designedBy sits:person_AnthemiusOfTralles,
-        sits:person_IsidoreOfMiletus ;
-    sits:originalFunction "Eastern Orthodox Cathedral" ;
-    sits:previousFunction "Museum (1935–2020)" ;
+    just:commissionedBy just:person_Justinian_I ;
+    just:currentFunction "Mosque" ;
+    just:designedBy just:person_AnthemiusOfTralles,
+        just:person_IsidoreOfMiletus ;
+    just:originalFunction "Eastern Orthodox Cathedral" ;
+    just:previousFunction "Museum (1935–2020)" ;
     schema:alternateName "Ayasofya-i Kebir Cami-i Şerifi"@tr ;
     schema:architecturalStyle wd:Q186350 .
 
-sits:item_mosaic a aat:300015342 ;
+just:item_mosaic a aat:300015342 ;
     dcterms:created "0526/0547" ;
     dcterms:source <https://catalogo.beniculturali.it/detail/PhotographicHeritage/0800649118> ;
     dcterms:subject "Justinian I and his entourage"@en ;
@@ -73,47 +73,47 @@ sits:item_mosaic a aat:300015342 ;
     crm:P45_consists_of aat:300010797 ;
     crm:P4_has_time-span wd:Q7075 ;
     crm:P55_has_current_location <https://www.geonames.org/3169561> ;
-    crm:P62_depicts sits:person_Belisarius,
-        sits:person_Justinian_I,
-        sits:person_Maximianus .
+    crm:P62_depicts just:person_Belisarius,
+        just:person_Justinian_I,
+        just:person_Maximianus .
 
-sits:item_movie a dbo:Film ;
+just:item_movie a dbo:Film ;
     skos:altLabel "Theodora" ;
-    schema:about sits:person_Theodora ;
+    schema:about just:person_Theodora ;
     schema:actor wd:Q33993 ;
-    schema:countryOfOrigin sits:country_Italy ;
+    schema:countryOfOrigin just:country_Italy ;
     schema:datePublished "1954" ;
     schema:director wd:Q750983 ;
     schema:genre wd:Q6632795 ;
-    schema:inLanguage sits:language_Italian ;
+    schema:inLanguage just:language_Italian ;
     schema:url <https://www.imdb.com/title/tt0047567/> .
 
-sits:item_video_game dcterms:source <https://civilization.fandom.com/wiki/Justinian_I> ;
+just:item_video_game dcterms:source <https://civilization.fandom.com/wiki/Justinian_I> ;
     dcterms:title "Civilization Series" ;
-    sits:definingFeature "Progression through Ages (Antiquity, Exploration, Modern)" ;
-    sits:featuresLeader sits:person_Justinian_I ;
-    sits:victoryCondition "Economic" ;
-    schema:creator sits:person_SidMeier ;
+    just:definingFeature "Progression through Ages (Antiquity, Exploration, Modern)" ;
+    just:featuresLeader just:person_Justinian_I ;
+    just:victoryCondition "Economic" ;
+    schema:creator just:person_SidMeier ;
     schema:datePublished "1991" ;
-    schema:gameEdition "Civilization VII" ;
+    schema:gameEdition "Civilization VI" ;
     schema:genre "4X Turn-Based Strategy" ;
-    schema:publisher sits:org_FireaxisGames,
-        sits:org_KGames .
+    schema:publisher just:org_FireaxisGames,
+        just:org_KGames .
 
-sits:person_Belsarius dcterms:isReferencedBy sits:item_music .
+just:person_Belsarius dcterms:isReferencedBy just:item_music .
 
-sits:place_BasilicaDiSanVitale dcterms:type aat:300007742 ;
+just:place_BasilicaDiSanVitale dcterms:type aat:300007742 ;
     owl:sameAs wd:Q200543 .
 
-sits:place_ByzantineEmpire owl:sameAs wd:Q7075 ;
-    sits:hasCapital sits:place_Constantinople .
+just:place_ByzantineEmpire owl:sameAs wd:Q7075 ;
+    just:hasCapital just:place_Constantinople .
 
-sits:collection_CorpusIurisCivilis dcterms:creator sits:person_Justinian_I ;
+just:collection_CorpusIurisCivilis dcterms:creator just:person_Justinian_I ;
     skos:altLabel "Codex Pisanus" .
 
-sits:concept_GreekUncial a bf:Script .
+just:concept_GreekUncial a bf:Script .
 
-sits:item_music dcterms:language "el",
+just:item_music dcterms:language "el",
         "la" ;
     dcterms:title "Justinian Epic Symphony" ;
     schema:composer wd:Q135142173 ;
@@ -128,20 +128,20 @@ sits:item_music dcterms:language "el",
         "YouTube" ;
     schema:url <https://www.youtube.com/watch?v=E6zzpya2FT4> .
 
-sits:person_Belisarius dcterms:isReferencedBy sits:item_board_game,
-        sits:item_book_2 ;
-    sits:isMagisterMilitumOf sits:person_Justinian_I .
+just:person_Belisarius dcterms:isReferencedBy just:item_board_game,
+        just:item_book_2 ;
+    just:isMagisterMilitumOf just:person_Justinian_I .
 
-sits:person_Theodora dcterms:isReferencedBy sits:item_board_game,
-        sits:item_book_2 ;
-    schema:spouse sits:person_Justinian_I .
+just:person_Theodora dcterms:isReferencedBy just:item_board_game,
+        just:item_book_2 ;
+    schema:spouse just:person_Justinian_I .
 
-sits:place_Constantinople owl:sameAs wd:Q16869 .
+just:place_Constantinople owl:sameAs wd:Q16869 .
 
-sits:item_board_game dcterms:contributor sits:person_HaraldLieske ;
-    dcterms:creator sits:person_AlessandroSaragosa,
-        sits:person_LeoColovini ;
-    sits:gameMechanics "Betting",
+just:item_board_game dcterms:contributor just:person_HaraldLieske ;
+    dcterms:creator just:person_AlessandroSaragosa,
+        just:person_LeoColovini ;
+    just:gameMechanics "Betting",
         "Bluffing",
         "Influence" ;
     schema:datePublished "2006" ;
@@ -151,12 +151,12 @@ sits:item_board_game dcterms:contributor sits:person_HaraldLieske ;
         "Tokens" ;
     schema:name "Justinian: Intrigue at the Emperor’s Court" ;
     schema:numberOfPlayers "2–4 players" ;
-    schema:publisher sits:org_MayfairGames,
-        sits:org_PhalanxGames ;
+    schema:publisher just:org_MayfairGames,
+        just:org_PhalanxGames ;
     schema:sameAs <https://boardgamegeek.com/boardgame/22938/justinian-intrigue-at-the-emperors-court> ;
     schema:timeRequired "PT45M" .
 
-sits:item_book_2 a bf:Text ;
+just:item_book_2 a bf:Text ;
     bf:identifiedBy "1256733539" ;
     dcterms:creator <http://viaf.org/viaf/100179778> ;
     dcterms:identifier "procopius0001proc" ;
@@ -165,5 +165,5 @@ sits:item_book_2 a bf:Text ;
     dcterms:source <https://archive.org/details/procopius0001proc/page/n5/mode/2up> ;
     dcterms:subject <http://id.loc.gov/authorities/names/n79071858> ;
     dcterms:title "History of the wars"@en ;
-    schema:about sits:person_Justinian_I .
+    schema:about just:person_Justinian_I .
 

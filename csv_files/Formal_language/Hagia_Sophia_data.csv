@@ -1,12 +1,12 @@
 Subject,Predicate,Object
-sits:item_hagia_sophia,dcterms:source,<https://www.archnet.org/sites/1989>
-sits:item_hagia_sophia,dcterms:title,"""Hagia Sophia""@en"
-sits:item_hagia_sophia,schema:alternateName,"""Ayasofya-i Kebir Cami-i Şerifi""@tr"
-sits:item_hagia_sophia,dcterms:created,"""0532/0537"""
-sits:item_hagia_sophia,sits:commissionedBy,sits:person_Justinian_I
-sits:item_hagia_sophia,sits:designedBy,sits:person_AnthemiusOfTralles
-sits:item_hagia_sophia,sits:designedBy,sits:person_IsidoreOfMiletus
-sits:item_hagia_sophia,schema:architecturalStyle,wd:Q186350
-sits:item_hagia_sophia,sits:originalFunction,"""Eastern Orthodox Cathedral"""
-sits:item_hagia_sophia,sits:previousFunction,"""Museum (1935–2020)"""
-sits:item_hagia_sophia,sits:currentFunction,"""Mosque"""
+just:item_hagia_sophia,dcterms:source,<https://www.archnet.org/sites/1989>
+just:item_hagia_sophia,dcterms:title,"""Hagia Sophia""@en"
+just:item_hagia_sophia,schema:alternateName,"""Ayasofya-i Kebir Cami-i Şerifi""@tr"
+just:item_hagia_sophia,dcterms:created,"""0532/0537"""
+just:item_hagia_sophia,just:commissionedBy,just:person_Justinian_I
+just:item_hagia_sophia,just:designedBy,just:person_AnthemiusOfTralles
+just:item_hagia_sophia,just:designedBy,just:person_IsidoreOfMiletus
+just:item_hagia_sophia,schema:architecturalStyle,wd:Q186350
+just:item_hagia_sophia,just:originalFunction,"""Eastern Orthodox Cathedral"""
+just:item_hagia_sophia,just:previousFunction,"""Museum (1935–2020)"""
+just:item_hagia_sophia,just:currentFunction,"""Mosque"""

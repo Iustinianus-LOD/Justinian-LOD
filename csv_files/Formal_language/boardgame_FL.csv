@@ -1,18 +1,18 @@
 Subject,Predicate,Object
-sits:item_board_game,schema:sameAs,https://boardgamegeek.com/boardgame/22938/justinian-intrigue-at-the-emperors-court
-sits:item_board_game,schema:name,Justinian: Intrigue at the Emperor’s Court
-sits:item_board_game,dcterms:creator,sits:person_LeoColovini
-sits:item_board_game,dcterms:creator,sits:person_AlessandroSaragosa
-sits:item_board_game,schema:publisher,sits:org_PhalanxGames 
-sits:item_board_game,schema:publisher,sits:org_MayfairGames 
-sits:item_board_game,schema:datePublished,"""2006"""
-sits:item_board_game,dcterms:contributor,sits:person_HaraldLieske
-sits:item_board_game,schema:numberOfPlayers ,2–4 players
-sits:item_board_game,schema:timeRequired,"""PT45M"""
-sits:item_board_game,sits:gameMechanics,"""Bluffing"""
-sits:item_board_game,sits:gameMechanics,"""Influence"""
-sits:item_board_game,sits:gameMechanics,"""Betting"""
-sits:item_board_game,schema:hasPart,"""Game board"""
-sits:item_board_game,schema:hasPart,"""Tokens"""
-sits:item_board_game,schema:hasPart,"""Cards"""
-sits:item_board_game,schema:hasPart,"""Box"""
+just:item_board_game,schema:sameAs,https://boardgamegeek.com/boardgame/22938/justinian-intrigue-at-the-emperors-court
+just:item_board_game,schema:name,Justinian: Intrigue at the Emperor’s Court
+just:item_board_game,dcterms:creator,just:person_LeoColovini
+just:item_board_game,dcterms:creator,just:person_AlessandroSaragosa
+just:item_board_game,schema:publisher,just:org_PhalanxGames 
+just:item_board_game,schema:publisher,just:org_MayfairGames 
+just:item_board_game,schema:datePublished,"""2006"""
+just:item_board_game,dcterms:contributor,just:person_HaraldLieske
+just:item_board_game,schema:numberOfPlayers ,2–4 players
+just:item_board_game,schema:timeRequired,"""PT45M"""
+just:item_board_game,just:gameMechanics,"""Bluffing"""
+just:item_board_game,just:gameMechanics,"""Influence"""
+just:item_board_game,just:gameMechanics,"""Betting"""
+just:item_board_game,schema:hasPart,"""Game board"""
+just:item_board_game,schema:hasPart,"""Tokens"""
+just:item_board_game,schema:hasPart,"""Cards"""
+just:item_board_game,schema:hasPart,"""Box"""

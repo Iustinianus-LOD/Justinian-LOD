@@ -1,12 +1,12 @@
 Subject,Predicate,Object
-sits:item_video_game,dcterms:source,<https://civilization.fandom.com/wiki/Justinian_I>
-sits:item_video_game,dcterms:title,"""Civilization Series"""
-sits:item_video_game,schema:genre,4X Turn-Based Strategy
-sits:item_video_game,schema:datePublished,"""1991"""
-sits:item_video_game,schema:creator,sits:person_SidMeier
-sits:item_video_game,schema:publisher,sits:org_FireaxisGames
-sits:item_video_game,schema:publisher,sits:org_KGames
-sits:item_video_game,schema:gameEdition,Civilization VI
-sits:item_video_game,sits:definingFeature,"Progression through Ages (Antiquity, Exploration, Modern)"
-sits:item_video_game,sits:victoryCondition,Economic
-sits:item_video_game,sits:featuresLeader,sits:person_Justinian_I
+just:item_video_game,dcterms:source,<https://civilization.fandom.com/wiki/Justinian_I>
+just:item_video_game,dcterms:title,"""Civilization Series"""
+just:item_video_game,schema:genre,4X Turn-Based Strategy
+just:item_video_game,schema:datePublished,"""1991"""
+just:item_video_game,schema:creator,just:person_SidMeier
+just:item_video_game,schema:publisher,just:org_FireaxisGames
+just:item_video_game,schema:publisher,just:org_KGames
+just:item_video_game,schema:gameEdition,Civilization VI
+just:item_video_game,just:definingFeature,"Progression through Ages (Antiquity, Exploration, Modern)"
+just:item_video_game,just:victoryCondition,Economic
+just:item_video_game,just:featuresLeader,just:person_Justinian_I

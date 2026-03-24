@@ -8,7 +8,7 @@ triple_graph = Graph()
 
 # Namespace prefix mappings
 prefix_map = {
-    "sits"    : Namespace("https://github.com/Iustinianus-LOD/Justinian-LOD.git/"),
+    "just"    : Namespace("https://github.com/Iustinianus-LOD/Justinian-LOD.git/"),
     "wd"      : Namespace("https://www.wikidata.org/wiki/"),
     "dbo"     : Namespace("https://dbpedia.org/ontology/"),
     "dcterms" : Namespace("http://purl.org/dc/terms/"),
